@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>🌸 Para ti</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+        }
+
+        /* FONDO GALAXIA */
+        body {
+            background: radial-gradient(circle at top, #2b1055, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* CONTENEDOR GENERAL */
+        #scene {
+            text-align: center;
+        }
+
+        /* FLOR */
+        #flower {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: auto;
+        }
+
+        .petal {
+            position: absolute;
+            width: 80px;
+            height: 140px;
+            background: linear-gradient(to top, #1e90ff, #87cefa);
+            border-radius: 50% 50% 0 0;
+            top: 30px;
+            left: 60px;
+            transform-origin: bottom center;
+            transform: scaleY(0);
+            animation: bloom 6s forwards;
+        }
+
+            .petal:nth-child(1) {
+                transform: rotate(0deg) scaleY(0);
+            }
+
+            .petal:nth-child(2) {
+                transform: rotate(45deg) scaleY(0);
+            }
+
+            .petal:nth-child(3) {
+                transform: rotate(90deg) scaleY(0);
+            }
+
+            .petal:nth-child(4) {
+                transform: rotate(135deg) scaleY(0);
+            }
+
+            .petal:nth-child(5) {
+                transform: rotate(180deg) scaleY(0);
+            }
+
+        @keyframes bloom {
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        /* BOTÓN */
+        button {
+            margin-top: 40px;
+            padding: 12px 30px;
+            font-size: 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            background: #ffd700;
+            color: black;
+            display: none;
+        }
+
+        /* CARTA */
+        #letter {
+            display: none;
+            width: 70%;
+            max-width: 600px;
+            background: linear-gradient(#fdf6e3, #f5deb3);
+            color: #3b2f2f;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255,255,255,0.3);
+        }
+
+            #letter textarea {
+                width: 100%;
+                height: 200px;
+                border: none;
+                background: transparent;
+                font-family: 'Georgia', serif;
+                font-size: 18px;
+                resize: none;
+                outline: none;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div id="scene">
+        <!-- FLOR -->
+        <div id="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+
+        <button id="holaBtn" onclick="mostrarCarta()">Hola 🌙</button>
+    </div>
+
+    <!-- CARTA -->
+    <div id="letter">
+        <h2>Para ti </h2>
+        <textarea placeholder="Bueno, se que quizas esto no sea mucho pero solo queria decirte que aprecio y valoro el esfuerzo que haces por tratar de entenderme y por apoyar mis estupideces, eres alguien increible y se tambien que eres una mujer que vale mucho :3"></textarea>
+    </div>
+
+    <script>
+  // Mostrar botón después de la animación
+  setTimeout(() => {
+    document.getElementById("holaBtn").style.display = "inline-block";
+  }, 6000);
+
+  function mostrarCarta() {
+    document.getElementById("scene").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+  }
+    </script>
+
+</body>
+</html>
